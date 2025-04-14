@@ -42,3 +42,8 @@ if(NOT COMPILER_FLAGS)
         set(COMPILER_FLAGS ${COMPILER_FLAGS_FOR_GCC})
     endif()
 endif()
+
+# C standard setting variable definition
+set(COMPILER_FEATURES cxx_std_17)
+
+
