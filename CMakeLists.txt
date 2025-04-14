@@ -61,6 +61,15 @@ set(${UPPERCASE_PROJECT_NAME}_APPLICATION_PATH ${CMAKE_CURRENT_SOURCE_DIR}/appli
 set(${UPPERCASE_PROJECT_NAME}_EXTERNAL_PATH ${CMAKE_CURRENT_SOURCE_DIR}/externals)
 set(${UPPERCASE_PROJECT_NAME}_SCRIPT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/scripts)
 
+# Common function expression
+include(${CMAKE_SOURCE_DIR}/cmake/core/directory/configure_subdirectory.cmake)
+
+# Each major directory configuration connection
+configure_subdirectory(${${UPPERCASE_PROJECT_NAME}_EXTERNAL_PATH} "External")
+configure_subdirectory(${${UPPERCASE_PROJECT_NAME}_LIBRARY_PATH} "Library")
+configure_subdirectory(${${UPPERCASE_PROJECT_NAME}_APPLICATION_PATH} "Application")
+configure_subdirectory(${${UPPERCASE_PROJECT_NAME}_SCRIPT_PATH} "Script")
+
 # Output start message
 message(STATUS "-----------------------------------------------------------------------------")
 message(STATUS "Started all process in ${PROJECT_NAME} CMakeLists.txt.")
@@ -105,12 +114,3 @@ message(STATUS)
 # Output termination message
 message(STATUS "Finished all process in ${PROJECT_NAME} CMakeLists.txt.")
 message(STATUS "-----------------------------------------------------------------------------")
-
-# Common function expression
-include(${CMAKE_SOURCE_DIR}/cmake/core/directory/configure_subdirectory.cmake)
-
-# Each major directory configuration connection
-configure_subdirectory(${${UPPERCASE_PROJECT_NAME}_EXTERNAL_PATH} "External")
-configure_subdirectory(${${UPPERCASE_PROJECT_NAME}_LIBRARY_PATH} "Library")
-configure_subdirectory(${${UPPERCASE_PROJECT_NAME}_APPLICATION_PATH} "Application")
-configure_subdirectory(${${UPPERCASE_PROJECT_NAME}_SCRIPT_PATH} "Script")
