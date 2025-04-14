@@ -1,5 +1,5 @@
 # project_template
-Modern CMake project template
+A modern modular C++ project template using CMake
 
 # directory structure
 ```
