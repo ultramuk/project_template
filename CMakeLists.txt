@@ -22,3 +22,10 @@ project(
     HOMEPAGE_URL ${PROJECT_HOMEPAGE_URL}
 )
 
+if(CMAKE_BUILD_TYPE STREQUAL "Release")
+    set(CMAKE_VERBOSE_MAKEFILE OFF)
+else()
+    set(CMAKE_VERBOSE_MAKEFILE ON)
+endif()
+
+
