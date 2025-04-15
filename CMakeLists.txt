@@ -13,7 +13,7 @@ cmake_minimum_required(VERSION ${CMAKE_VERSION_MINIMUM})
 set(PROJECT_NAME project_template)
 set(PROJECT_VERSION 1.0.0)
 set(PROJECT_DESCRIPTION "A modern modular C++ project template using CMake")
-set(PROJECT_HOMEPAGE_URL "<https://github.com/ultramuk/project_template>")
+set(PROJECT_HOMEPAGE_URL "https://github.com/ultramuk/project_template")
 
 # Reset the project
 project(
@@ -69,6 +69,9 @@ configure_subdirectory(${${UPPERCASE_PROJECT_NAME}_EXTERNAL_PATH} "External")
 configure_subdirectory(${${UPPERCASE_PROJECT_NAME}_LIBRARY_PATH} "Library")
 configure_subdirectory(${${UPPERCASE_PROJECT_NAME}_APPLICATION_PATH} "Application")
 configure_subdirectory(${${UPPERCASE_PROJECT_NAME}_SCRIPT_PATH} "Script")
+
+# IMPORTED target check
+target_link_libraries(project_template PRIVATE gtest gtest_main)
 
 # Output start message
 message(STATUS "-----------------------------------------------------------------------------")
