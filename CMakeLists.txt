@@ -71,7 +71,7 @@ configure_subdirectory(${${UPPERCASE_PROJECT_NAME}_APPLICATION_PATH} "Applicatio
 configure_subdirectory(${${UPPERCASE_PROJECT_NAME}_SCRIPT_PATH} "Script")
 
 # IMPORTED target check
-target_link_libraries(project_template PRIVATE gtest gtest_main)
+target_link_libraries(${PROJECT_NAME} PRIVATE gtest gtest_main)
 
 # Output start message
 message(STATUS "-----------------------------------------------------------------------------")
