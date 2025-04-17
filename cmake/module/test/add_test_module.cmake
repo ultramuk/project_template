@@ -1,4 +1,4 @@
-include({CMAKE_SOURCE_DIR}/cmake/module/test/create_test_executable.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/module/test/create_test_executable.cmake)
 
 function(add_test_module)
     cmake_parse_arguments(ARGUMENTS "" "TARGET" "SOURCES;DEPENDENCIES" ${ARGN})
