@@ -1,5 +1,6 @@
 # project_template
-A modern, modular, and reusable C++ project template using CMake. Designed to support scalable development, automated dependency management, and platform-specific builds.
+A modern, modular, and reusable C++ project template using CMake.
+Designed to support scalable development, automated dependency management, and platform-specific builds.
 
 ## Overview
 This template provides:
@@ -9,6 +10,7 @@ This template provides:
 - Unit test integration with GoogleTest
 - Script system for initialization and automation
 - Reusable CMake functions for libraries, applications, and tests
+- Configurable static/shared library builds
 
 ## directory structure
 ```
@@ -34,6 +36,15 @@ project-root/
 ```
 cmake -B build
 cmake --build build
+```
+
+### Choose Static or Shared Libraries
+```
+# Static libraries
+cmake -B build -DBUILD_SHARED_LIBS=OFF
+
+# Shared libraries (default)
+cmake -B build -DBUILD_SHARED_LIBS=ON
 ```
 
 ### Run Application

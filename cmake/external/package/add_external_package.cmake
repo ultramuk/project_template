@@ -1,7 +1,7 @@
 include(${CMAKE_SOURCE_DIR}/cmake/core/string/convert_to_uppercase_with_underscores.cmake)
 include(${CMAKE_SOURCE_DIR}/cmake/external/package/set_external_package_paths.cmake)
 include(${CMAKE_SOURCE_DIR}/cmake/external/library/check_libraries_exist.cmake)
-include(${CMAKE_SOURCE_DIR}/cmake/external/library/configure_static_library.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/external/library/configure_library.cmake)
 include(${CMAKE_SOURCE_DIR}/cmake/external/package/install_external_package.cmake)
 
 function(add_external_package)
@@ -52,6 +52,6 @@ function(add_external_package)
     endif()
 
     foreach(LIBRARY_NAME ${PACKAGE_LIBRARIES})
-        configure_static_library(${LIBRARY_NAME} ${PACKAGE_IDENTIFIER})
+        configure_library(${LIBRARY_NAME} ${PACKAGE_IDENTIFIER})
     endforeach()
 endfunction()

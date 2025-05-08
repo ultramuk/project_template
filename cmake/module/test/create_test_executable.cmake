@@ -14,6 +14,7 @@ function(create_test_executable)
             gtest
             gtest_main
             ${PROJECT_NAME}
+            pthread
         )
 
         add_target_dependencies(${ARGUMENTS_TARGET} DEPENDENCIES ${ARGUMENTS_DEPENDENCIES})

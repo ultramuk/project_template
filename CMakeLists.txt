@@ -23,6 +23,9 @@ project(
     HOMEPAGE_URL ${PROJECT_HOMEPAGE_URL}
 )
 
+# Setting whether library sharing is shared (default: dynamic)
+option(BUILD_SHARED_LIBS "Build shared libraries instead of static ones" ON)
+
 # Build type confirmation & Output control setting
 if(CMAKE_BUILD_TYPE STREQUAL "Release")
     set(CMAKE_VERBOSE_MAKEFILE OFF)
@@ -101,6 +104,7 @@ message(STATUS "C++ Compiler Path: ${CMAKE_CXX_COMPILER}")
 message(STATUS "C++ Build Type: ${CMAKE_BUILD_TYPE}")
 message(STATUS "C++ Compiler Features: ${COMPILER_FEATURES}")
 message(STATUS "C++ Compiler Flags: ${COMPILER_FLAGS}")
+message(STATUS "Build Shared Libraries: ${BUILD_SHARED_LIBS}")
 message(STATUS)
 
 # Global path constant output
